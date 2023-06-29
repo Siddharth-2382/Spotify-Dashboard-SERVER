@@ -149,8 +149,9 @@ app.get("/refresh_token", function (req, res) {
 });
 
 // All remaining requests return the React app, so it can handle routing.
+
 app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "../ClIENT/public", "index.html"));
+  res.redirect(FRONTEND_URI);
 });
 
 app.listen(PORT, function () {
